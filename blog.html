@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from https://epinecng.com/shieldforce/blog.html by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <title>ShieldForce Blog | Cybersecurity Insights for Nigerian Businesses</title>
+  <meta name="description" content="Expert cybersecurity insights, threat intelligence updates, and best practices from the ShieldForce team — protecting Nigerian businesses from modern cyber threats.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="blog.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ─── DESIGN TOKENS (match ShieldForce dark theme) ─── */
+    :root {
+      --sf-primary:      #117FCC;
+      --sf-primary-dark: #0D5E99;
+      --sf-accent:       #78BDE4;
+      --sf-highlight:    #FCE009;
+      --sf-dark:         #0F172A;
+      --sf-dark-lighter: #1E293B;
+      --sf-dark-card:    #1E293B;
+      --sf-text:         #FFFFFF;
+      --sf-text-muted:   #78BDE4;
+      --sf-border:       rgba(255,255,255,0.08);
+      --font:            'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius:          0.75rem;
+      --transition:      200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); background: var(--sf-dark); color: var(--sf-text); line-height: 1.6; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─── NAV (copy from index.html) ─── */
+    .sf-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(15,23,42,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--sf-border);
+    }
+    .sf-nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; padding: 0 1.5rem; max-width: 1440px; margin: 0 auto;
+    }
+    .sf-logo img { height: 62px; width: auto; object-fit: contain; }
+    .sf-nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .sf-nav-links a { font-weight: 500; color: var(--sf-text-muted); padding: 0.5rem 0; position: relative; }
+    .sf-nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--sf-highlight); transition: width var(--transition); }
+    .sf-nav-links a:hover { color: var(--sf-text); }
+    .sf-nav-links a:hover::after, .sf-nav-links a.active::after { width: 100%; }
+    .sf-nav-links a.active { color: var(--sf-text); }
+
+    .sf-plans-nav { display: flex; align-items: center; gap: 0.375rem; }
+    .sf-plan-btn { padding: 0.35rem 0.9rem; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 600; border: 1.5px solid transparent; transition: all 0.15s; white-space: nowrap; }
+    .sf-plan-standard { color: #C084FC; border-color: rgba(192,132,252,0.3); }
+    .sf-plan-standard:hover { background: rgba(192,132,252,0.12); border-color: rgba(192,132,252,0.6); color: #D8B4FE; }
+
+    .sf-btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.25rem; background: var(--sf-primary); color: #fff;
+      border-radius: var(--radius); font-size: 0.9rem; font-weight: 600;
+      border: none; cursor: pointer; transition: all 0.15s;
+    }
+    .sf-btn-primary:hover { background: var(--sf-primary-dark); transform: translateY(-1px); }
+
+    .sf-mobile-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .sf-mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--sf-text); border-radius: 9999px; transition: all 0.2s; }
+
+    .sf-mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+      background: #0F172A; border-bottom: 1px solid var(--sf-border); padding: 1.25rem 1.5rem;
+    }
+    .sf-mobile-menu.open { display: block; }
+    .sf-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0.125rem; }
+    .sf-mobile-menu a { display: block; padding: 0.625rem 0.75rem; color: var(--sf-text-muted); font-size: 0.9375rem; border-radius: 0.375rem; transition: all 0.15s; }
+    .sf-mobile-menu a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+    /* ─── PAGE WRAPPER ─── */
+    main { padding-top: 72px; }
+
+    /* ─── HERO BANNER ─── */
+    .blog-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F2744 100%);
+      border-bottom: 1px solid var(--sf-border);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(17,127,204,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
+    .blog-hero-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 0.9rem; border-radius: 9999px;
+      background: rgba(17,127,204,0.15); border: 1px solid rgba(17,127,204,0.35);
+      color: var(--sf-accent); font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem;
+    }
+    .blog-hero h1 span {
+      background: linear-gradient(135deg, var(--sf-primary) 0%, var(--sf-accent) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .blog-hero p { font-size: 1.0625rem; color: var(--sf-text-muted); max-width: 540px; margin: 0 auto 2rem; }
+
+    /* Search bar */
+    .blog-search {
+      display: flex; max-width: 480px; margin: 0 auto;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--sf-border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .blog-search:focus-within { border-color: rgba(17,127,204,0.5); }
+    .blog-search input {
+      flex: 1; background: none; border: none; outline: none;
+      padding: 0.75rem 1rem; color: #fff; font-family: var(--font); font-size: 0.9375rem;
+    }
+    .blog-search input::placeholder { color: rgba(255,255,255,0.3); }
+    .blog-search button {
+      background: var(--sf-primary); border: none; padding: 0 1.25rem;
+      color: #fff; cursor: pointer; font-size: 0.9rem; transition: background 0.15s;
+      display: flex; align-items: center;
+    }
+    .blog-search button:hover { background: var(--sf-primary-dark); }
+
+    /* ─── CATEGORIES ─── */
+    .categories-bar {
+      background: var(--sf-dark-lighter); border-bottom: 1px solid var(--sf-border);
+      position: sticky; top: 72px; z-index: 50;
+    }
+    .categories-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      overflow-x: auto; scrollbar-width: none; height: 54px;
+    }
+    .categories-inner::-webkit-scrollbar { display: none; }
+    .cat-btn {
+      white-space: nowrap; padding: 0.3rem 0.875rem;
+      background: transparent; border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.55); border-radius: 9999px;
+      font-size: 0.8125rem; font-weight: 500; cursor: pointer; font-family: var(--font);
+      transition: all 0.15s;
+    }
+    .cat-btn:hover { border-color: var(--sf-primary); color: var(--sf-accent); }
+    .cat-btn.active { background: var(--sf-primary); border-color: var(--sf-primary); color: #fff; }
+
+    /* ─── MAIN CONTENT ─── */
+    .blog-body { max-width: 1280px; margin: 0 auto; padding: 3.5rem 1.5rem 5rem; }
+
+    /* ─── FEATURED POST ─── */
+    .featured-label {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--sf-highlight); margin-bottom: 1.25rem;
+    }
+    .featured-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.06); }
+
+    .featured-post {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center;
+      background: var(--sf-dark-card); border: 1px solid var(--sf-border);
+      border-radius: 1rem; overflow: hidden; margin-bottom: 3.5rem;
+      transition: border-color 0.2s;
+    }
+    .featured-post:hover { border-color: rgba(17,127,204,0.35); }
+    .featured-img {
+      aspect-ratio: 16/10; overflow: hidden; position: relative;
+    }
+    .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .featured-post:hover .featured-img img { transform: scale(1.03); }
+    .featured-img .img-placeholder {
+      width: 100%; height: 100%; min-height: 300px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .featured-content { padding: 2.5rem 2.5rem 2.5rem 0; }
+    .post-tag {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.2rem 0.65rem; border-radius: 9999px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 0.875rem;
+    }
+    .tag-threat    { background: rgba(239,68,68,0.15); color: #FCA5A5; border: 1px solid rgba(239,68,68,0.25); }
+    .tag-edr       { background: rgba(17,127,204,0.15); color: #93C5FD; border: 1px solid rgba(17,127,204,0.3); }
+    .tag-ransomware{ background: rgba(251,146,60,0.15); color: #FED7AA; border: 1px solid rgba(251,146,60,0.25); }
+    .tag-compliance{ background: rgba(52,211,153,0.15); color: #6EE7B7; border: 1px solid rgba(52,211,153,0.25); }
+    .tag-phishing  { background: rgba(251,191,36,0.15); color: #FDE68A; border: 1px solid rgba(251,191,36,0.25); }
+    .tag-howto     { background: rgba(167,139,250,0.15); color: #DDD6FE; border: 1px solid rgba(167,139,250,0.25); }
+    .tag-news      { background: rgba(120,189,228,0.15); color: #BAE6FD; border: 1px solid rgba(120,189,228,0.25); }
+
+    .featured-content h2 {
+      font-size: clamp(1.25rem, 2.5vw, 1.875rem); font-weight: 800;
+      letter-spacing: -0.025em; line-height: 1.25; margin-bottom: 0.875rem;
+    }
+    .featured-content h2 a:hover { color: var(--sf-accent); }
+    .featured-content .excerpt { color: rgba(255,255,255,0.6); font-size: 0.9375rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .post-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8125rem; color: rgba(255,255,255,0.35); }
+    .post-meta .author { display: flex; align-items: center; gap: 0.375rem; color: rgba(255,255,255,0.5); }
+    .post-meta .author img { width: 24px; height: 24px; border-radius: 9999px; object-fit: cover; }
+    .meta-sep { color: rgba(255,255,255,0.15); }
+    .read-more {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      color: var(--sf-accent); font-size: 0.875rem; font-weight: 600;
+      margin-top: 1.25rem; transition: gap 0.15s;
+    }
+    .read-more:hover { gap: 0.625rem; color: #fff; }
+
+    /* ─── POSTS GRID ─── */
+    .section-row-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .section-row-header h2 { font-size: 1.125rem; font-weight: 700; }
+    .section-row-header a { font-size: 0.8125rem; color: var(--sf-accent); display: flex; align-items: center; gap: 0.3rem; }
+    .section-row-header a:hover { color: #fff; }
+
+    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+    .post-card {
+      background: var(--sf-dark-card); border: 1px solid var(--sf-border);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .post-card:hover { border-color: rgba(17,127,204,0.35); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    .card-img {
+      aspect-ratio: 16/9; overflow: hidden; position: relative; flex-shrink: 0;
+    }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .post-card:hover .card-img img { transform: scale(1.04); }
+    .card-img-placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    }
+
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-body .post-tag { margin-bottom: 0.625rem; }
+    .card-body h3 {
+      font-size: 1rem; font-weight: 700; line-height: 1.4;
+      margin-bottom: 0.625rem; letter-spacing: -0.015em;
+    }
+    .card-body h3 a:hover { color: var(--sf-accent); }
+    .card-body .excerpt { font-size: 0.8375rem; color: rgba(255,255,255,0.5); line-height: 1.65; flex: 1; margin-bottom: 1rem; }
+    .card-footer { border-top: 1px solid var(--sf-border); padding-top: 0.875rem; }
+    .card-footer .post-meta { font-size: 0.75rem; }
+
+    /* ─── SIDEBAR ─── */
+    .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; }
+    .sidebar-section { margin-bottom: 2rem; }
+    .sidebar-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.35); margin-bottom: 1rem;
+      padding-bottom: 0.625rem; border-bottom: 1px solid var(--sf-border);
+    }
+    .sidebar-post { display: flex; gap: 0.875rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--sf-border); }
+    .sidebar-post:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .sidebar-post-img { width: 60px; height: 60px; border-radius: 0.5rem; overflow: hidden; flex-shrink: 0; }
+    .sidebar-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-post-img .sp-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .sidebar-post h4 { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.25rem; }
+    .sidebar-post h4 a:hover { color: var(--sf-accent); }
+    .sidebar-post .sp-meta { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag-cloud a {
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--sf-border);
+      font-size: 0.75rem; color: rgba(255,255,255,0.5); transition: all 0.15s;
+    }
+    .tag-cloud a:hover { background: rgba(17,127,204,0.15); border-color: rgba(17,127,204,0.4); color: var(--sf-accent); }
+
+    .newsletter-box {
+      background: linear-gradient(135deg, rgba(17,127,204,0.15) 0%, rgba(17,127,204,0.05) 100%);
+      border: 1px solid rgba(17,127,204,0.25); border-radius: var(--radius); padding: 1.5rem;
+    }
+    .newsletter-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .newsletter-box p { font-size: 0.8125rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; line-height: 1.5; }
+    .newsletter-input { display: flex; flex-direction: column; gap: 0.5rem; }
+    .newsletter-input input {
+      background: rgba(255,255,255,0.06); border: 1px solid var(--sf-border);
+      border-radius: 0.5rem; padding: 0.625rem 0.875rem;
+      color: #fff; font-family: var(--font); font-size: 0.875rem; outline: none;
+    }
+    .newsletter-input input:focus { border-color: rgba(17,127,204,0.5); }
+    .newsletter-input input::placeholder { color: rgba(255,255,255,0.25); }
+    .newsletter-input button {
+      background: var(--sf-primary); color: #fff; border: none; border-radius: 0.5rem;
+      padding: 0.625rem; font-family: var(--font); font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .newsletter-input button:hover { background: var(--sf-primary-dark); }
+
+    /* ─── FOOTER ─── */
+    .sf-footer { background: #070E1A; border-top: 1px solid var(--sf-border); padding: 2.5rem 0; }
+    .sf-footer-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.3);
+    }
+    .sf-footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .sf-footer-links a { color: rgba(255,255,255,0.3); transition: color 0.15s; }
+    .sf-footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ─── PLACEHOLDERS (for posts without images) ─── */
+    .bg-threat   { background: linear-gradient(135deg, #1a0a0a 0%, #2d1010 100%); }
+    .bg-edr      { background: linear-gradient(135deg, #071828 0%, #0d2d47 100%); }
+    .bg-ransom   { background: linear-gradient(135deg, #1a1000 0%, #2d1f00 100%); }
+    .bg-comp     { background: linear-gradient(135deg, #001a10 0%, #002d1e 100%); }
+    .bg-phish    { background: linear-gradient(135deg, #1a1500 0%, #2d2400 100%); }
+    .bg-howto    { background: linear-gradient(135deg, #100a1a 0%, #1f1030 100%); }
+    .bg-news     { background: linear-gradient(135deg, #071828 0%, #0d2035 100%); }
+    .ph-icon { font-size: 2.5rem; opacity: 0.25; }
+    .ph-icon-sm { font-size: 1.25rem; opacity: 0.25; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .blog-layout { grid-template-columns: 1fr; }
+      .posts-grid  { grid-template-columns: repeat(2, 1fr); }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-content { padding: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .sf-nav-links, .sf-plans-nav, .sf-btn-primary { display: none; }
+      .sf-mobile-toggle { display: flex; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .blog-hero { padding: 3.5rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="sf-nav">
+    <div class="sf-nav-inner">
+      <a href="index-2.html" class="sf-logo">
+        <img src="shieldforceWhite.png" alt="ShieldForce Nigeria" loading="eager">
+      </a>
+
+      <ul class="sf-nav-links">
+        <li><a href="index-2.html">Home</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index-2.html#contact">Contact</a></li>
+        <li><a href="https://epinecng.com/">EPINEC</a></li>
+      </ul>
+
+      <div class="sf-plans-nav">
+        <a href="standard.html" class="sf-plan-btn sf-plan-standard">Standard Edition</a>
+      </div>
+
+      <a href="index-2.html#contact" class="sf-btn-primary">Get Protected</a>
+
+      <button class="sf-mobile-toggle" id="sfMobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="sf-mobile-menu" id="sfMobileMenu">
+    <ul>
+      <li><a href="index-2.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index-2.html#contact">Contact</a></li>
+      <li><a href="https://epinecng.com/">Back to EPINEC</a></li>
+      <li style="padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.08);margin-top:0.5rem;">
+        <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);font-weight:600;">Offer</span>
+      </li>
+      <li><a href="standard.html">Standard Edition &nbsp;·&nbsp; 1 user, 3-in-1 or 5-in-1</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ─── HERO ─── -->
+    <div class="blog-hero">
+      <div class="blog-hero-inner">
+        <div class="blog-hero-label">
+          <i class="fa-solid fa-rss"></i> ShieldForce Intel
+        </div>
+        <h1>Cybersecurity <span>Insights</span><br>for Nigerian Businesses</h1>
+        <p>Stay ahead of evolving threats with expert analysis, product updates, and actionable security best practices from the ShieldForce team.</p>
+        <div class="blog-search">
+          <input type="search" placeholder="Search articles…" aria-label="Search blog posts" id="blogSearch">
+          <button type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CATEGORY FILTERS ─── -->
+    <div class="categories-bar">
+      <div class="categories-inner">
+        <button class="cat-btn active" data-cat="all">All Articles</button>
+        <button class="cat-btn" data-cat="threat-intel">Threat Intelligence</button>
+        <button class="cat-btn" data-cat="edr">EDR &amp; Endpoint</button>
+        <button class="cat-btn" data-cat="ransomware">Ransomware</button>
+        <button class="cat-btn" data-cat="compliance">Compliance</button>
+        <button class="cat-btn" data-cat="phishing">Phishing</button>
+        <button class="cat-btn" data-cat="how-to">How-To Guides</button>
+        <button class="cat-btn" data-cat="news">News &amp; Updates</button>
+      </div>
+    </div>
+
+    <!-- ─── BODY ─── -->
+    <div class="blog-body">
+
+      <!-- FEATURED POST -->
+      <div class="featured-label">
+        <i class="fa-solid fa-star" style="font-size:0.65rem;"></i> Featured Article
+      </div>
+
+      <div id="featuredSection"><!-- populated by JS --></div>
+
+      <!-- MAIN + SIDEBAR LAYOUT -->
+      <div class="blog-layout">
+
+        <!-- ─── MAIN POSTS ─── -->
+        <div>
+          <div class="section-row-header">
+            <h2>Latest Articles</h2>
+          </div>
+
+          <div class="posts-grid" id="postsGrid">
+            <!-- posts injected by JS -->
+            <div id="postsLoading" style="grid-column:1/-1;text-align:center;padding:4rem 0;color:rgba(255,255,255,0.35);">
+              <i class="fa-solid fa-circle-notch fa-spin" style="font-size:2rem;margin-bottom:1rem;display:block;"></i>
+              Loading articles…
+            </div>
+          </div><!-- /posts-grid -->
+        </div>
+        <!-- ─── SIDEBAR ─── -->
+        <aside>
+
+          <!-- Newsletter -->
+          <div class="sidebar-section">
+            <div class="newsletter-box">
+              <h3>Stay Ahead of Threats</h3>
+              <p>Get ShieldForce security alerts and blog digests delivered to your inbox — no spam, unsubscribe anytime.</p>
+              <div class="newsletter-input">
+                <input type="email" placeholder="your@email.com" aria-label="Email address">
+                <button type="button">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popular Posts -->
+          <div class="sidebar-section">
+            <div class="sidebar-title">Popular Articles</div>
+            <div id="popularPosts">
+              <div style="text-align:center;padding:1.5rem 0;color:rgba(255,255,255,0.25);font-size:0.8125rem;">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tag Cloud -->
+          <div class="sidebar-section">
+            <div class="sidebar-title">Topics</div>
+            <div class="tag-cloud">
+              <a href="#">Ransomware</a>
+              <a href="#">EDR</a>
+              <a href="#">XDR</a>
+              <a href="#">Zero-Day</a>
+              <a href="#">NDPR</a>
+              <a href="#">Phishing</a>
+              <a href="#">MITRE ATT&CK</a>
+              <a href="#">Patch Management</a>
+              <a href="#">BEC</a>
+              <a href="#">Crypto-mining</a>
+              <a href="#">Incident Response</a>
+              <a href="#">SME Security</a>
+              <a href="#">Microsoft 365</a>
+              <a href="#">Threat Intel</a>
+            </div>
+          </div>
+
+          <!-- Plans CTA -->
+          <div class="sidebar-section" style="background: var(--sf-dark-card); border: 1px solid var(--sf-border); border-radius: var(--radius); padding: 1.5rem;">
+            <div class="sidebar-title" style="border-bottom-color: var(--sf-border);">Our Offer</div>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.5;">Protect your organisation with ShieldForce Standard Edition and choose the deployment size that fits.</p>
+            <a href="standard.html" style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0.75rem;border-radius:0.5rem;border:1px solid rgba(192,132,252,0.3);font-size:0.8125rem;color:#D8B4FE;transition:background 0.15s;" onmouseover="this.style.background='rgba(192,132,252,0.08)'" onmouseout="this.style.background='transparent'">Standard Edition <span style="font-size:0.75rem;color:rgba(255,255,255,0.3);">1 / 3 / 5</span></a>
+          </div>
+
+        </aside>
+      </div><!-- /blog-layout -->
+    </div><!-- /blog-body -->
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="sf-footer">
+    <div class="sf-footer-inner">
+      <div>© 2026 EPINEC Nigeria Ltd &nbsp;·&nbsp; Sole Distributor of ShieldForce in Africa</div>
+      <div class="sf-footer-links">
+        <a href="index-2.html">ShieldForce Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="standard.html">Standard Edition</a>
+        <a href="https://epinecng.com/cdn-cgi/l/email-protection#f79e999198b7849f9e929b939198859492d98284">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── Mobile menu toggle ─────────────────────────────────────────────────
+    document.getElementById('sfMobileToggle').addEventListener('click', function () {
+      document.getElementById('sfMobileMenu').classList.toggle('open');
+    });
+
+    // ── Blog state ─────────────────────────────────────────────────────────
+    var blogState = { pageSize: 10000, category: null, search: '' };
+    var searchTimeout = null;
+
+    // ── Category map: data-cat → API value ────────────────────────────────
+    var CAT_MAP = {
+      'threat-intel': 'Threat Intel',
+      'edr':          'EDR',
+      'ransomware':   'Ransomware',
+      'compliance':   'Compliance',
+      'phishing':     'Phishing',
+      'how-to':       'How-To',
+      'news':         'News'
+    };
+    var CAT_STYLE = {
+      'Threat Intel': { cls: 'tag-threat',    icon: 'fa-triangle-exclamation', bg: 'bg-threat'  },
+      'EDR':          { cls: 'tag-edr',       icon: 'fa-shield-halved',        bg: 'bg-edr'     },
+      'Ransomware':   { cls: 'tag-ransomware',icon: 'fa-lock',                 bg: 'bg-ransom'  },
+      'Compliance':   { cls: 'tag-compliance',icon: 'fa-scale-balanced',       bg: 'bg-comp'    },
+      'Phishing':     { cls: 'tag-phishing',  icon: 'fa-fish',                 bg: 'bg-phish'   },
+      'How-To':       { cls: 'tag-howto',     icon: 'fa-book-open',            bg: 'bg-howto'   },
+      'News':         { cls: 'tag-news',      icon: 'fa-newspaper',            bg: 'bg-news'    }
+    };
+
+    function fmtDate(unix) {
+      if (!unix) return '';
+      var d = new Date(unix * 1000);
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function cardImgHtml(post) {
+      var s = CAT_STYLE[post.category] || { bg: 'bg-edr', icon: 'fa-shield-halved' };
+      if (post.cover_image) {
+        return '<div class="card-img"><img src="' + escHtml(post.cover_image) + '" alt="" loading="lazy"></div>';
+      }
+      return '<div class="card-img"><div class="card-img-placeholder ' + s.bg + '">'
+           + '<i class="fa-solid ' + s.icon + ' ph-icon"></i></div></div>';
+    }
+
+    function tagHtml(cat) {
+      var s = CAT_STYLE[cat] || { cls: 'tag-news', icon: 'fa-newspaper' };
+      return '<span class="post-tag ' + s.cls + '"><i class="fa-solid ' + s.icon + '"></i> ' + escHtml(cat) + '</span>';
+    }
+
+    function escHtml(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function buildCard(post) {
+      var href = 'blog-post02ee.html?slug=' + encodeURIComponent(post.slug);
+      return '<article class="post-card">'
+        + cardImgHtml(post)
+        + '<div class="card-body">'
+        + tagHtml(post.category)
+        + '<h3><a href="' + href + '">' + escHtml(post.title) + '</a></h3>'
+        + '<p class="excerpt">' + escHtml(post.excerpt) + '</p>'
+        + '<div class="card-footer"><div class="post-meta">'
+        + '<span>' + fmtDate(post.published_at) + '</span>'
+        + '<span class="meta-sep">·</span>'
+        + '<span>' + post.read_time + ' min read</span>'
+        + '</div></div>'
+        + '</div></article>';
+    }
+
+    function buildFeatured(post) {
+      if (!post) return '';
+      var s    = CAT_STYLE[post.category] || { cls: 'tag-news', icon: 'fa-newspaper', bg: 'bg-news' };
+      var href = 'blog-post02ee.html?slug=' + encodeURIComponent(post.slug);
+      var imgHtml = post.cover_image
+        ? '<img src="' + escHtml(post.cover_image) + '" alt="" style="width:100%;height:100%;object-fit:cover;">'
+        : '<div class="img-placeholder ' + s.bg + '"><i class="fa-solid ' + s.icon + ' ph-icon"></i></div>';
+      return '<div class="featured-label"><i class="fa-solid fa-star" style="font-size:0.65rem;"></i> Featured Article</div>'
+        + '<article class="featured-post">'
+        + '<div class="featured-img">' + imgHtml + '</div>'
+        + '<div class="featured-content">'
+        + tagHtml(post.category)
+        + '<h2><a href="' + href + '">' + escHtml(post.title) + '</a></h2>'
+        + '<p class="excerpt">' + escHtml(post.excerpt) + '</p>'
+        + '<div class="post-meta">'
+        + '<span class="author"><i class="fa-solid fa-user-circle"></i> ' + escHtml(post.author) + '</span>'
+        + '<span class="meta-sep">·</span><span>' + fmtDate(post.published_at) + '</span>'
+        + '<span class="meta-sep">·</span><span><i class="fa-regular fa-clock"></i> ' + post.read_time + ' min read</span>'
+        + '</div>'
+        + '<a href="' + href + '" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>'
+        + '</div></article>';
+    }
+
+    async function loadPosts() {
+      var grid   = document.getElementById('postsGrid');
+      var featEl = document.getElementById('featuredSection');
+
+      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem 0;color:rgba(255,255,255,0.35);">'
+        + '<i class="fa-solid fa-circle-notch fa-spin" style="font-size:2rem;margin-bottom:1rem;display:block;"></i>Loading articles…</div>';
+
+      var qs = '?pageSize=' + blogState.pageSize;
+      if (blogState.category) qs += '&category=' + encodeURIComponent(blogState.category);
+      if (blogState.search)   qs += '&search='   + encodeURIComponent(blogState.search);
+
+      try {
+        var res  = await fetch('/shieldforce/api/blog/posts' + qs);
+        var data = await res.json();
+        var posts = data.posts || [];
+
+        if (!posts.length) {
+          grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem 0;color:rgba(255,255,255,0.45);">'
+            + '<i class="fa-solid fa-newspaper" style="font-size:2rem;margin-bottom:1rem;display:block;opacity:0.3;"></i>'
+            + 'No articles found.</div>';
+          // Clear featured
+          if (featEl) featEl.innerHTML = '';
+          return;
+        }
+
+        // Render the featured post only for the unfiltered listing
+        if (featEl) {
+          var featuredPost = (!blogState.category && !blogState.search)
+            ? posts.find(function(p){ return p.featured; }) : null;
+          featEl.innerHTML = buildFeatured(featuredPost);
+          // Remove featured from regular grid
+          if (featuredPost) {
+            posts = posts.filter(function(p){ return p.id !== featuredPost.id; });
+          }
+        }
+
+        grid.innerHTML = posts.map(buildCard).join('');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } catch (err) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem 0;color:rgba(255,255,255,0.35);">'
+          + '<i class="fa-solid fa-triangle-exclamation" style="font-size:2rem;margin-bottom:1rem;display:block;color:#f87171;"></i>'
+          + 'Could not load articles. Please try again later.</div>';
+        console.error('Blog fetch error:', err);
+      }
+    }
+
+    // ── Category buttons ───────────────────────────────────────────────────
+    document.querySelectorAll('.cat-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        blogState.category = CAT_MAP[btn.dataset.cat] || null;
+        loadPosts();
+      });
+    });
+
+    // ── Search (debounced 350 ms) ──────────────────────────────────────────
+    document.getElementById('blogSearch').addEventListener('input', function() {
+      blogState.search = this.value.trim();
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(function(){ loadPosts(); }, 350);
+    });
+
+    // Search button click — trigger immediately
+    document.querySelector('.blog-search button').addEventListener('click', function() {
+      blogState.search = document.getElementById('blogSearch').value.trim();
+      clearTimeout(searchTimeout);
+      loadPosts();
+    });
+
+    // ── Popular Articles — session-seeded shuffle ──────────────────────────
+    // Fetches up to 20 posts and shows a random 4, consistent within the session
+    // but different across sessions so different users see different selections.
+    (async function loadPopularArticles() {
+      var seed = sessionStorage.getItem('sf_popular_seed');
+      if (!seed) {
+        seed = Math.random().toString(36).slice(2) + Date.now().toString(36);
+        sessionStorage.setItem('sf_popular_seed', seed);
+      }
+
+      function seededRand(seedStr, index) {
+        var h = 0x811c9dc5;
+        var combined = seedStr + index;
+        for (var i = 0; i < combined.length; i++) {
+          h ^= combined.charCodeAt(i);
+          h = Math.imul(h, 0x01000193) >>> 0;
+        }
+        return (h >>> 0) / 4294967296;
+      }
+
+      try {
+        var res  = await fetch('/shieldforce/api/blog/posts?pageSize=20');
+        var data = await res.json();
+        var posts = data.posts || [];
+        if (!posts.length) { document.getElementById('popularPosts').innerHTML = ''; return; }
+
+        // Fisher-Yates with seeded random
+        var shuffled = posts.slice();
+        for (var i = shuffled.length - 1; i > 0; i--) {
+          var j = Math.floor(seededRand(seed, i) * (i + 1));
+          var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
+        }
+        var popular = shuffled.slice(0, 4);
+
+        var html = popular.map(function(p) {
+          var s = CAT_STYLE[p.category] || { bg: 'bg-edr', icon: 'fa-shield-halved' };
+          var href = 'blog-post02ee.html?slug=' + encodeURIComponent(p.slug);
+          var imgHtml = p.cover_image
+            ? '<img src="' + escHtml(p.cover_image) + '" alt="" style="width:100%;height:100%;object-fit:cover;">'
+            : '<div class="sp-placeholder ' + s.bg + '"><i class="fa-solid ' + s.icon + ' ph-icon-sm"></i></div>';
+          return '<div class="sidebar-post">'
+            + '<div class="sidebar-post-img">' + imgHtml + '</div>'
+            + '<div><h4><a href="' + href + '">' + escHtml(p.title) + '</a></h4>'
+            + '<span class="sp-meta">' + fmtDate(p.published_at) + ' · ' + p.read_time + ' min read</span>'
+            + '</div></div>';
+        }).join('');
+
+        document.getElementById('popularPosts').innerHTML = html;
+      } catch (e) {
+        document.getElementById('popularPosts').innerHTML = '';
+      }
+    })();
+
+    // ── Subscribe form ─────────────────────────────────────────────────────
+    document.querySelector('.newsletter-input button').addEventListener('click', async function() {
+      var btn      = this;
+      var input    = document.querySelector('.newsletter-input input[type="email"]');
+      var email    = input.value.trim();
+      var box      = document.querySelector('.newsletter-box');
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.style.borderColor = '#f87171';
+        input.focus();
+        return;
+      }
+      input.style.borderColor = '';
+      btn.disabled    = true;
+      btn.textContent = 'Subscribing…';
+
+      try {
+        var fd = new FormData();
+        fd.append('firstname', 'Newsletter Subscriber');
+        fd.append('companyname', 'ShieldForce Blog');
+        fd.append('email', email);
+        fd.append('phone', '');
+        fd.append('message', 'New blog newsletter subscription from epinecng.com/shieldforce/blog');
+        fd.append('interest', 'Blog Newsletter Subscription - ShieldForce Nigeria');
+
+        await fetch('https://epinecng.com/clients_info.php', { method: 'POST', body: fd });
+
+        box.innerHTML = '<div style="text-align:center;padding:1.25rem 0;">'
+          + '<i class="fa-solid fa-circle-check" style="font-size:2rem;color:#34d399;margin-bottom:0.75rem;display:block;"></i>'
+          + '<p style="font-weight:600;margin-bottom:0.25rem;">You\'re subscribed!</p>'
+          + '<p style="font-size:0.8125rem;color:rgba(255,255,255,0.45);">Security alerts and blog digests will be sent to <strong>' + escHtml(email) + '</strong></p>'
+          + '</div>';
+      } catch (e) {
+        btn.disabled    = false;
+        btn.textContent = 'Subscribe';
+        input.style.borderColor = '#f87171';
+      }
+    });
+
+    // ── Initial load ───────────────────────────────────────────────────────
+    loadPosts();
+  </script>
+</body>
+
+<!-- Mirrored from https://epinecng.com/shieldforce/blog.html by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:16 GMT -->
+</html>

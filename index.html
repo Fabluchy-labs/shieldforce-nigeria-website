@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from https://epinecng.com/shieldforce/index.html by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>ShieldForce Nigeria | Enterprise Cybersecurity Solutions</title>
+  <meta name="description" content="ShieldForce Nigeria - Enterprise-grade cybersecurity solutions protecting Nigerian businesses from cyber threats. Advanced threat detection, incident response, and security consulting.">
+  <meta name="keywords" content="cybersecurity Nigeria, cyber defense, threat protection Lagos, enterprise security Africa, SOC services Nigeria">
+  <meta name="author" content="EPINEC">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="index.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="ShieldForce Nigeria | Enterprise Cybersecurity">
+  <meta property="og:description" content="Enterprise-grade cybersecurity solutions protecting Nigerian businesses.">
+  <meta property="og:image" content="shieldforceWhite.png">
+  <meta property="og:url" content="index.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ShieldForce Nigeria | Enterprise Cybersecurity Solutions">
+  <meta name="twitter:description" content="Enterprise-grade cybersecurity solutions protecting Nigerian businesses from modern threats.">
+  <meta name="twitter:image" content="shieldforceWhite.png">
+  
+  <!-- Theme -->
+  <meta name="theme-color" content="#117FCC">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* ===========================================
+       ShieldForce Nigeria - Cybersecurity Theme
+       Blue/Dark color scheme for security focus
+       =========================================== */
+    
+    :root {
+      /* Primary Colors - Blue/Cyber Theme */
+      --sf-primary: #117FCC;
+      --sf-primary-dark: #117FCC;
+      --sf-primary-light: #2AC3FB;
+      --sf-accent: #78BDE4;
+      --sf-highlight: #FCE009;
+      
+      /* Dark Theme Colors */
+      --sf-dark: #0f172a;
+      --sf-dark-lighter: #1e293b;
+      --sf-dark-card: #1e293b;
+      
+      /* Text */
+      --sf-text: #FFFFFF;
+      --sf-text-muted: #78BDE4;
+      
+      /* Effects */
+      --sf-glow: 0 0 40px rgba(17, 127, 204, 0.35);
+      --sf-border: rgba(255, 255, 255, 0.1);
+      
+      /* Spacing */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      --space-4xl: 6rem;
+      
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      /* Transitions */
+      --transition-fast: 150ms ease;
+      --transition-base: 250ms ease;
+      
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+    }
+    
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background: var(--sf-dark);
+      color: var(--sf-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    
+    .heading-display {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    
+    .heading-1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+    
+    .heading-2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--sf-primary) 0%, var(--sf-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Navigation */
+    .sf-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--sf-border);
+    }
+    
+    .sf-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 var(--space-lg);
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    
+    .sf-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .sf-logo img {
+      height: 62px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    
+    .sf-nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xl);
+      list-style: none;
+    }
+    
+    .sf-nav-links a {
+      font-weight: 500;
+      color: var(--sf-text-muted);
+      padding: var(--space-sm) 0;
+      position: relative;
+    }
+    
+    .sf-nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--sf-highlight);
+      transition: width var(--transition-base);
+    }
+    
+    .sf-nav-links a:hover {
+      color: var(--sf-text);
+    }
+    
+    .sf-nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .sf-plans-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .sf-plan-btn {
+      padding: 0.35rem 0.9rem;
+      border-radius: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border: 1.5px solid transparent;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .sf-plan-standard { color: #C084FC; border-color: rgba(192,132,252,0.3); }
+    .sf-plan-standard:hover { background: rgba(192,132,252,0.12); border-color: rgba(192,132,252,0.6); color: #D8B4FE; }
+    
+    .sf-nav-cta {
+      display: flex;
+      gap: var(--space-md);
+    }
+    
+    /* Buttons */
+    .sf-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      border-radius: var(--radius-lg);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .sf-btn-primary {
+      background: linear-gradient(135deg, var(--sf-primary) 0%, var(--sf-accent) 100%);
+      color: white;
+      border: 1px solid rgba(252, 224, 9, 0.35);
+      box-shadow: 0 4px 15px rgba(17, 127, 204, 0.35);
+    }
+    
+    .sf-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(17, 127, 204, 0.45);
+      border-color: rgba(252, 224, 9, 0.65);
+    }
+    
+    .sf-btn-outline {
+      background: transparent;
+      color: var(--sf-highlight);
+      border: 2px solid rgba(252, 224, 9, 0.7);
+    }
+    
+    .sf-btn-outline:hover {
+      background: rgba(252, 224, 9, 0.15);
+      color: #FFFFFF;
+      border-color: var(--sf-highlight);
+    }
+    
+    .sf-btn-lg {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    
+    /* Hero Section */
+    .sf-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+      overflow: hidden;
+    }
+    
+    .sf-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(17, 127, 204, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(42, 195, 251, 0.12) 0%, transparent 40%),
+        radial-gradient(ellipse at 60% 80%, rgba(120, 189, 228, 0.14) 0%, transparent 40%);
+    }
+    
+    .sf-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(17, 127, 204, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 127, 204, 0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    
+    /* Animated cyber lines */
+    .sf-cyber-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .sf-cyber-line {
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, var(--sf-primary), transparent);
+      animation: cyberLine 3s linear infinite;
+      opacity: 0.5;
+    }
+    
+    .sf-cyber-line:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .sf-cyber-line:nth-child(2) { left: 25%; animation-delay: 0.5s; }
+    .sf-cyber-line:nth-child(3) { left: 40%; animation-delay: 1s; }
+    .sf-cyber-line:nth-child(4) { left: 55%; animation-delay: 1.5s; }
+    .sf-cyber-line:nth-child(5) { left: 70%; animation-delay: 2s; }
+    .sf-cyber-line:nth-child(6) { left: 85%; animation-delay: 2.5s; }
+    
+    @keyframes cyberLine {
+      0% { top: -100px; opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      100% { top: 100%; opacity: 0; }
+    }
+    
+    .sf-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-3xl) var(--space-lg);
+    }
+    
+    .sf-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 0.5rem 1rem;
+      background: rgba(17, 127, 204, 0.14);
+      border: 1px solid rgba(42, 195, 251, 0.35);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--sf-primary-light);
+      margin-bottom: var(--space-xl);
+    }
+
+    .sf-hero-badge i {
+      color: var(--sf-highlight);
+    }
+    
+    .sf-hero-badge i {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .sf-hero h1 {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--sf-text-muted);
+      max-width: 700px;
+      margin: 0 auto var(--space-2xl);
+      line-height: 1.7;
+    }
+    
+    .sf-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+      margin-bottom: var(--space-3xl);
+    }
+    
+    .sf-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      width: 100%;
+      gap: var(--space-xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid rgba(252, 224, 9, 0.35);
+    }
+    
+    .sf-stat {
+      text-align: center;
+      min-width: 0;
+    }
+    
+    .sf-stat-value {
+      font-size: clamp(1.35rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      color: var(--sf-highlight);
+      line-height: 1;
+      text-shadow: 0 2px 10px rgba(252, 224, 9, 0.25);
+    }
+    
+    .sf-stat-label {
+      font-size: clamp(0.62rem, 1.25vw, 0.875rem);
+      color: var(--sf-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.25rem;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    
+    /* Section Styles */
+    .sf-section {
+      padding: var(--space-4xl) 0;
+    }
+    
+    .sf-section-alt {
+      background: var(--sf-dark-lighter);
+    }
+    
+    .sf-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-3xl);
+    }
+    
+    .sf-section-header p {
+      color: var(--sf-text-muted);
+      font-size: 1.125rem;
+      margin-top: var(--space-md);
+    }
+    
+    /* Threat Stats */
+    .sf-threat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+    }
+    
+    .sf-threat-card {
+      background: var(--sf-dark-card);
+      border: 1px solid var(--sf-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+    
+    .sf-threat-card:hover {
+      border-color: var(--sf-primary);
+      box-shadow: var(--sf-glow);
+      transform: translateY(-4px);
+    }
+    
+    .sf-threat-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: rgba(17, 127, 204, 0.12);
+      border-radius: var(--radius-lg);
+      color: var(--sf-primary);
+      font-size: 1.5rem;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-threat-card h3 {
+      font-size: 2rem;
+      color: var(--sf-primary-light);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .sf-threat-card p {
+      color: var(--sf-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    /* Services Grid */
+    .sf-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+    
+    .sf-service-card {
+      background: var(--sf-dark-card);
+      border: 1px solid var(--sf-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .sf-service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--sf-primary), var(--sf-accent), var(--sf-highlight));
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    
+    .sf-service-card:hover {
+      border-color: var(--sf-primary);
+      transform: translateY(-4px);
+    }
+    
+    .sf-service-card:hover::before {
+      opacity: 1;
+    }
+    
+    .sf-service-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--sf-primary), var(--sf-accent));
+      border-radius: var(--radius-lg);
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .sf-service-card p {
+      color: var(--sf-text-muted);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+    
+    /* Features */
+    .sf-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4xl);
+      align-items: center;
+    }
+    
+    .sf-features-content h2 {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-features-content > p {
+      color: var(--sf-text-muted);
+      font-size: 1.0625rem;
+      margin-bottom: var(--space-xl);
+      line-height: 1.8;
+    }
+    
+    .sf-feature-list {
+      list-style: none;
+    }
+    
+    .sf-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      background: var(--sf-dark-card);
+      border: 1px solid var(--sf-border);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-sm);
+      transition: all var(--transition-fast);
+    }
+    
+    .sf-feature-list li:hover {
+      border-color: var(--sf-primary);
+      background: rgba(17, 127, 204, 0.08);
+    }
+    
+    .sf-feature-list li i {
+      color: var(--sf-highlight);
+      font-size: 1.25rem;
+      margin-top: 2px;
+    }
+    
+    .sf-features-visual {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .sf-shield-visual {
+      position: relative;
+      width: 520px;
+      height: 580px;
+    }
+    
+    .sf-shield-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(17, 127, 204, 0.22), rgba(42, 195, 251, 0.12));
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      border: 2px solid rgba(42, 195, 251, 0.4);
+      animation: shieldPulse 3s ease-in-out infinite;
+    }
+    
+    .sf-shield-inner {
+      position: absolute;
+      inset: 40px;
+      background: linear-gradient(135deg, rgba(17, 127, 204, 0.32), rgba(120, 189, 228, 0.24));
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      border: 1px solid rgba(42, 195, 251, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .sf-shield-inner i {
+      font-size: 5rem;
+      color: var(--sf-primary-light);
+    }
+    
+    @keyframes shieldPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(17, 127, 204, 0.42); }
+      50% { transform: scale(1.02); box-shadow: 0 0 40px 10px rgba(42, 195, 251, 0.22); }
+    }
+    
+    /* Contact Section */
+    .sf-contact {
+      background: linear-gradient(135deg, var(--sf-dark) 0%, var(--sf-dark-lighter) 100%);
+    }
+    
+    .sf-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-4xl);
+    }
+    
+    .sf-contact-info h2 {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-contact-info > p {
+      color: var(--sf-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .sf-contact-list {
+      list-style: none;
+    }
+    
+    .sf-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-contact-list li .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(17, 127, 204, 0.14);
+      border-radius: var(--radius-md);
+      color: var(--sf-primary-light);
+    }
+    
+    .sf-contact-form {
+      background: var(--sf-dark-card);
+      border: 1px solid var(--sf-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-2xl);
+    }
+    
+    .sf-contact-form h3 {
+      margin-bottom: var(--space-xl);
+    }
+    
+    .sf-form-group {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .sf-form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .sf-form-control {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      font-family: var(--font-sans);
+      background: var(--sf-dark);
+      border: 1px solid var(--sf-border);
+      border-radius: var(--radius-lg);
+      color: var(--sf-text);
+      transition: all var(--transition-fast);
+    }
+    
+    .sf-form-control:focus {
+      outline: none;
+      border-color: var(--sf-primary);
+      box-shadow: 0 0 0 3px rgba(17, 127, 204, 0.2);
+    }
+    
+    .sf-form-control::placeholder {
+      color: var(--sf-text-muted);
+    }
+    
+    textarea.sf-form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .sf-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+    
+    /* Footer */
+    .sf-footer {
+      background: var(--sf-dark);
+      border-top: 1px solid var(--sf-border);
+      padding: var(--space-2xl) 0;
+    }
+    
+    .sf-footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .sf-footer-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    
+    .sf-footer-brand .sf-logo img {
+      height: 52px;
+    }
+    
+    .sf-footer-powered {
+      color: var(--sf-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    .sf-footer-powered a {
+      color: var(--sf-highlight);
+    }
+    
+    .sf-footer-links {
+      display: flex;
+      gap: var(--space-xl);
+    }
+    
+    .sf-footer-links a {
+      color: var(--sf-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    .sf-footer-links a:hover {
+      color: var(--sf-highlight);
+    }
+    
+    /* Mobile Navigation */
+    .sf-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: var(--space-sm);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .sf-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--sf-text);
+      transition: all var(--transition-fast);
+    }
+    
+    .sf-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--sf-dark);
+      z-index: 999;
+      padding: var(--space-xl);
+    }
+    
+    .sf-mobile-menu.active {
+      display: block;
+    }
+    
+    .sf-mobile-menu ul {
+      list-style: none;
+    }
+    
+    .sf-mobile-menu li {
+      margin-bottom: var(--space-md);
+    }
+    
+    .sf-mobile-menu a {
+      display: block;
+      padding: var(--space-md);
+      font-size: 1.125rem;
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+    
+    .sf-mobile-menu a:hover {
+      background: var(--sf-dark-lighter);
+      color: var(--sf-primary-light);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .sf-threat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .sf-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .sf-nav-links,
+      .sf-nav-cta,
+      .sf-plans-nav {
+        display: none;
+      }
+      
+      .sf-mobile-toggle {
+        display: flex;
+      }
+      
+      .sf-hero-stats {
+        gap: var(--space-sm);
+      }
+      
+      .sf-stat {
+        min-width: 0;
+      }
+      
+      .sf-threat-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sf-services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sf-features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sf-features-visual {
+        order: -1;
+      }
+      
+      .sf-shield-visual {
+        width: 250px;
+        height: 280px;
+      }
+      
+      .sf-contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sf-form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .sf-footer-content {
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sf-hero-content {
+        padding: var(--space-2xl) var(--space-md);
+      }
+
+      .sf-hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .sf-hero-actions {
+        flex-direction: column;
+      }
+
+      .sf-hero-actions .sf-btn {
+        width: 100%;
+      }
+
+      .sf-hero-stats {
+        gap: var(--space-xs);
+      }
+
+      .sf-stat-value {
+        font-size: clamp(1.1rem, 5vw, 1.4rem);
+      }
+
+      .sf-stat-label {
+        font-size: 0.58rem;
+      }
+
+      .sf-section {
+        padding: var(--space-2xl) 0;
+      }
+
+      .sf-service-card,
+      .sf-contact-form {
+        padding: var(--space-lg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="sf-nav">
+    <div class="sf-nav-inner">
+      <a href="index.html" class="sf-logo">
+        <img src="shieldforceWhite.png" alt="ShieldForce" loading="eager">
+      </a>
+      
+      <ul class="sf-nav-links">
+        <li><a href="#services">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://softwareshopltd.com/">Softwareshop</a></li>
+      </ul>
+
+      <div class="sf-plans-nav">
+        <a href="standard.html" class="sf-plan-btn sf-plan-standard">Standard Edition</a>
+      </div>
+      
+      <div class="sf-nav-cta">
+        <a href="#contact" class="sf-btn sf-btn-primary">Get Protected</a>
+      </div>
+      
+      <button class="sf-mobile-toggle" id="sfMobileToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div class="sf-mobile-menu" id="sfMobileMenu">
+    <ul>
+      <li><a href="#services">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://softwareshopltd.com/">Back to Softwareshop</a></li>
+      <li style="padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.08);margin-top:0.5rem;"><span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);font-weight:600;">Offer</span></li>
+      <li><a href="standard.html">Standard Edition &nbsp;·&nbsp; 1 user, 3-in-1 or 5-in-1</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="sf-hero">
+      <div class="sf-hero-bg"></div>
+      <div class="sf-hero-grid"></div>
+      
+      <div class="sf-cyber-lines">
+        <div class="sf-cyber-line"></div>
+        <div class="sf-cyber-line"></div>
+        <div class="sf-cyber-line"></div>
+        <div class="sf-cyber-line"></div>
+        <div class="sf-cyber-line"></div>
+        <div class="sf-cyber-line"></div>
+      </div>
+      
+      <div class="container">
+        <div class="sf-hero-content">
+          <div class="sf-hero-badge">
+            <i class="fa-solid fa-lock"></i>
+            Enterprise Cybersecurity for Nigeria
+          </div>
+          
+          <h1 class="heading-display">
+            Defend Your Business with <span class="text-gradient">ShieldForce</span>
+          </h1>
+          
+          <p class="sf-hero-subtitle">
+            Nigeria's premier cybersecurity solution. We protect your organization from advanced cyber threats with 24/7 monitoring, rapid incident response, and cutting-edge security technologies.
+          </p>
+          
+          <div class="sf-hero-actions">
+            <a href="#contact" class="sf-btn sf-btn-primary sf-btn-lg">
+              Get Security Assessment
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#services" class="sf-btn sf-btn-outline sf-btn-lg">
+              Our Services
+            </a>
+          </div>
+          
+          <div class="sf-hero-stats">
+            <div class="sf-stat">
+              <div class="sf-stat-value count-up" data-target="15000" data-suffix="+">0+</div>
+              <div class="sf-stat-label">Endpoints Protected</div>
+            </div>
+            <div class="sf-stat">
+              <div class="sf-stat-value count-up" data-target="150" data-suffix="+">0+</div>
+              <div class="sf-stat-label">Cybersecurity Experts</div>
+            </div>
+            <div class="sf-stat">
+              <div class="sf-stat-value count-up" data-target="99" data-suffix="+">0+</div>
+              <div class="sf-stat-label">Protected Companies</div>
+            </div>
+            <div class="sf-stat">
+              <div class="sf-stat-value count-up" data-target="99.9" data-decimals="1" data-suffix="%">0.0%</div>
+              <div class="sf-stat-label">Success Rate</div>
+            </div>
+            <div class="sf-stat">
+              <div class="sf-stat-value count-up" data-target="59" data-suffix="+">0+</div>
+              <div class="sf-stat-label">Strategic Partners</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Threat Landscape -->
+    <section class="sf-section sf-section-alt">
+      <div class="container">
+        <div class="sf-section-header">
+          <h2 class="heading-1">The <span class="text-gradient">Threat Landscape</span></h2>
+          <p>Nigerian businesses face increasing cyber threats every day. Here's what we're fighting against.</p>
+        </div>
+        
+        <div class="sf-threat-grid">
+          <div class="sf-threat-card">
+            <div class="sf-threat-icon">
+              <i class="fa-solid fa-virus"></i>
+            </div>
+            <h3>450%</h3>
+            <p>Increase in ransomware attacks in Africa</p>
+          </div>
+          
+          <div class="sf-threat-card">
+            <div class="sf-threat-icon">
+              <i class="fa-solid fa-user-secret"></i>
+            </div>
+            <h3>₦150B</h3>
+            <p>Lost to cybercrime in Nigeria annually</p>
+          </div>
+          
+          <div class="sf-threat-card">
+            <div class="sf-threat-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>87 Days</h3>
+            <p>Average time to detect a breach</p>
+          </div>
+          
+          <div class="sf-threat-card">
+            <div class="sf-threat-icon">
+              <i class="fa-solid fa-building-circle-xmark"></i>
+            </div>
+            <h3>60%</h3>
+            <p>SMBs close within 6 months of attack</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="sf-section" id="services">
+      <div class="container">
+        <div class="sf-section-header">
+          <h2 class="heading-1">Security <span class="text-gradient">Services</span></h2>
+          <p>Comprehensive cybersecurity solutions designed for Nigerian enterprises.</p>
+        </div>
+        
+        <div class="sf-services-grid">
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3>Security Operations Center (SOC)</h3>
+            <p>24/7 monitoring and threat detection with our Nigeria-based SOC team. Real-time alerts and rapid incident response.</p>
+          </div>
+          
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3>Vulnerability Assessment</h3>
+            <p>Comprehensive security assessments to identify weaknesses before attackers do. Regular penetration testing and reporting.</p>
+          </div>
+          
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-fire-extinguisher"></i>
+            </div>
+            <h3>Incident Response</h3>
+            <p>Rapid response team ready to contain and remediate security incidents. Minimize damage and recovery time.</p>
+          </div>
+          
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-laptop-medical"></i>
+            </div>
+            <h3>Endpoint Protection</h3>
+            <p>Advanced endpoint detection and response (EDR) to protect all devices across your organization.</p>
+          </div>
+          
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3>Security Awareness Training</h3>
+            <p>Train your employees to recognize and respond to cyber threats. Reduce human error vulnerabilities.</p>
+          </div>
+          
+          <div class="sf-service-card">
+            <div class="sf-service-icon">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3>Compliance & Governance</h3>
+            <p>Meet regulatory requirements including HIPAA, NDPR, PCI-DSS, and ISO 27001 with our compliance services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="sf-section sf-section-alt" id="features">
+      <div class="container">
+        <div class="sf-features-grid">
+          <div class="sf-features-content">
+            <h2 class="heading-1">Why <span class="text-gradient">ShieldForce</span>?</h2>
+            <p>We understand the unique cybersecurity challenges facing Nigerian businesses. Our solutions are designed specifically for the African enterprise landscape.</p>
+            
+            <ul class="sf-feature-list">
+              <li>
+                <i class="fa-solid fa-bolt"></i>
+                <div>
+                  <strong>Managed SOC + Rapid Recovery</strong><br>
+                  <span style="color: var(--sf-text-muted);">24/7 monitoring, response playbooks, and automated recovery workflows built to restore operations fast.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-users"></i>
+                <div>
+                  <strong>Industry-Tailored Security</strong><br>
+                  <span style="color: var(--sf-text-muted);">Protection paths aligned to your size, workflows, and compliance obligations—not one-size-fits-all tooling.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-robot"></i>
+                <div>
+                  <strong>ShieldForce Advantage Blueprint</strong><br>
+                  <span style="color: var(--sf-text-muted);">Implementation, technical support, reporting, customer success, and resilience reviews in one subscription model.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-handshake"></i>
+                <div>
+                  <strong>Flexible, Trusted Partnership</strong><br>
+                  <span style="color: var(--sf-text-muted);">Cost-effective month-to-month plans with expert advisory support so you scale security with confidence.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sf-features-visual">
+            <div class="sf-shield-visual">
+              <img src="shieldforceWhite.png" alt="ShieldForce Nigeria" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="sf-section sf-contact" id="contact">
+      <div class="container">
+        <div class="sf-contact-grid">
+          <div class="sf-contact-info">
+            <h2 class="heading-1">Get Your Free <span class="text-gradient">Security Assessment</span></h2>
+            <p>Let our experts evaluate your security posture and identify potential vulnerabilities before attackers do.</p>
+            
+            <ul class="sf-contact-list">
+              <li>
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <strong>Lagos Office</strong><br>
+                  4B Pepple Street, Computer Village, Ikeja
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <strong>Hotline</strong><br>
+                  +234 808 080 8585
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                 <strong>Email</strong><br>
+<a href="mailto:info@softwareshopshieldforce.com" style="color: var(--sf-primary-light);">
+    info@softwareshopshieldforce.com
+</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-headset"></i></span>
+                <div>
+                  <strong>24/7 SOC</strong><br>
+                  Round-the-clock security monitoring
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sf-contact-form">
+  <h3>Request a Standard quote</h3>
+
+  <form action="https://epinecng.com/clients_info.php" method="POST">
+
+    <input type="hidden" name="csrf_token" id="sf-csrf-token" value="">
+    <input type="hidden" name="form_type" value="shieldforce_standard_quote">
+
+    <!-- Honeypot -->
+    <input type="text" name="website" value="" tabindex="-1"
+           autocomplete="off" style="display:none!important;">
+
+    <div class="sf-form-row">
+      <div class="sf-form-group">
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="firstname"
+               class="sf-form-control"
+               placeholder="Your first name" required>
+      </div>
+
+      <div class="sf-form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname"
+               class="sf-form-control"
+               placeholder="Your last name" required>
+      </div>
+    </div>
+
+    <div class="sf-form-row">
+      <div class="sf-form-group">
+        <label for="company">Business / Company
+          <span style="font-weight:400;color:var(--sf-text-muted);">(optional)</span>
+        </label>
+        <input type="text" id="company" name="companyname"
+               class="sf-form-control"
+               placeholder="Business or company name">
+      </div>
+
+      <div class="sf-form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"
+               class="sf-form-control"
+               placeholder="you@company.com" required>
+      </div>
+    </div>
+
+    <div class="sf-form-row">
+      <div class="sf-form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone"
+               class="sf-form-control"
+               placeholder="+234..." required>
+      </div>
+
+      <div class="sf-form-group">
+        <label for="productPackage">Standard option</label>
+        <select id="productPackage" name="productPackage"
+                class="sf-form-control">
+          <option value="1-user">1 user</option>
+          <option value="3-users">3-in-1</option>
+          <option value="5-users">5-in-1</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="sf-form-row">
+      <div class="sf-form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country" class="sf-form-control">
+          <option value="Nigeria" selected>Nigeria</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Kenya">Kenya</option>
+          <option value="South Africa">South Africa</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="sf-form-group">
+        <label for="state">State / Region</label>
+        <input type="text" id="state" name="state"
+               class="sf-form-control"
+               placeholder="State or region">
+      </div>
+    </div>
+
+    <div class="sf-form-group">
+      <label for="address">Physical Address</label>
+      <input type="text" id="address" name="address"
+             class="sf-form-control"
+             placeholder="Business or delivery address">
+    </div>
+
+    <div class="sf-form-group">
+      <label for="message">Tell us about your security needs</label>
+      <textarea id="message" name="message"
+                class="sf-form-control"
+                placeholder="Describe your current security challenges..."
+                required></textarea>
+    </div>
+
+    <input type="hidden" name="text" value="ShieldForce Standard Edition">
+
+    <button type="submit" name="btn"
+            class="sf-btn sf-btn-primary sf-btn-lg"
+            style="width: 100%;">
+      Request Standard Quote
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+  </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="sf-footer">
+    <div class="container">
+      <div class="sf-footer-content">
+        <div class="sf-footer-brand">
+          <a href="index.html" class="sf-logo">
+            <img src="shieldforceWhite.png" alt="ShieldForce" loading="lazy">
+          </a>
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <span class="sf-footer-powered">Powered by <a href="https://softwareshopltd.com/">Softwareshop</a></span>
+            <p style="font-size: 0.75rem; color: var(--sf-text-muted); margin-top: 4px;">&copy; <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> Softwareshop Limited</p>
+          </div>
+        </div>
+        
+        <div class="sf-footer-links">
+          <a href="https://softwareshopltd.com/">Softwareshop</a>
+          <a href="https://softwareshopshieldforce.com/">Home</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('https://epinecng.com/get_csrf_token.php')
+      .then(response => response.json())
+      .then(data => {
+        const csrf = document.getElementById('sf-csrf-token');
+        if (csrf && data && data.token) csrf.value = data.token;
+      })
+      .catch(() => {});
+
+    // Preserve the selected Standard option from offer-page CTAs.
+    (function () {
+      const allowedPackages = ['1-user', '3-users', '5-users'];
+      const selectedPackage = new URLSearchParams(window.location.search).get('package');
+      const packageSelect = document.getElementById('productPackage');
+      if (packageSelect && allowedPackages.includes(selectedPackage)) {
+        packageSelect.value = selectedPackage;
+      }
+    }());
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('sfMobileToggle');
+    const menu = document.getElementById('sfMobileMenu');
+    
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+    
+    // Close menu on link click
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          const navHeight = 72;
+          const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Count-up animation for hero stats
+    const formatCountUp = (value, decimals, prefix, suffix) => {
+      const safeValue = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
+      const numeric = Number(safeValue);
+      const localized = decimals > 0
+        ? numeric.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+        : numeric.toLocaleString();
+      return `${prefix}${localized}${suffix}`;
+    };
+
+    const animateCountUp = (element) => {
+      if (element.dataset.animated === 'true') return;
+
+      const target = Number.parseFloat(element.dataset.target || '0');
+      if (!Number.isFinite(target)) return;
+
+      const decimals = Number.parseInt(element.dataset.decimals || '0', 10);
+      const prefix = element.dataset.prefix || '';
+      const suffix = element.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+      const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+      const tick = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+        const current = target * eased;
+
+        element.textContent = formatCountUp(current, decimals, prefix, suffix);
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          element.textContent = formatCountUp(target, decimals, prefix, suffix);
+          element.dataset.animated = 'true';
+        }
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    const counters = document.querySelectorAll('.count-up');
+    if (counters.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCountUp(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach((counter) => observer.observe(counter));
+    }
+  </script>
+</body>
+
+<!-- Mirrored from https://epinecng.com/shieldforce/index.html by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:19 GMT -->
+</html>

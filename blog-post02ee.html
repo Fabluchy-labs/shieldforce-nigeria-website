@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from https://epinecng.com/shieldforce/blog-post.html?slug= by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and meta are set dynamically by JS once the post loads -->
+  <title>ShieldForce Blog</title>
+  <meta name="description" content="ShieldForce cybersecurity insights for Nigerian businesses.">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical is set dynamically to /shieldforce/blog/<slug> -->
+  <link rel="canonical" id="canonical-link" href="blog.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Open Graph placeholders — filled by JS -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="ShieldForce Nigeria">
+  <meta property="og:title"       id="og-title"       content="">
+  <meta property="og:description" id="og-description" content="">
+  <meta property="og:image"       id="og-image"       content="">
+  <meta property="og:url"         id="og-url"         content="">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       id="tw-title"       content="">
+  <meta name="twitter:description" id="tw-description" content="">
+  <meta name="twitter:image"       id="tw-image"       content="">
+  <style>
+    :root {
+      --sf-primary:      #117FCC;
+      --sf-primary-dark: #0D5E99;
+      --sf-accent:       #78BDE4;
+      --sf-highlight:    #FCE009;
+      --sf-dark:         #0F172A;
+      --sf-dark-lighter: #1E293B;
+      --sf-dark-card:    #1E293B;
+      --sf-text:         #FFFFFF;
+      --sf-text-muted:   #78BDE4;
+      --sf-border:       rgba(255,255,255,0.08);
+      --font:            'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius:          0.75rem;
+      --transition:      200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); background: #0C1320; color: var(--sf-text); line-height: 1.75; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .sf-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(11,17,30,0.94); backdrop-filter: blur(22px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .sf-nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; padding: 0 1.5rem; max-width: 1440px; margin: 0 auto;
+    }
+    .sf-logo img { height: 62px; width: auto; object-fit: contain; }
+    .sf-nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .sf-nav-links a { font-weight: 500; color: var(--sf-text-muted); padding: 0.5rem 0; position: relative; }
+    .sf-nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--sf-highlight); transition: width var(--transition); }
+    .sf-nav-links a:hover { color: var(--sf-text); }
+    .sf-nav-links a:hover::after, .sf-nav-links a.active::after { width: 100%; }
+    .sf-nav-links a.active { color: var(--sf-text); }
+    .sf-plans-nav { display: flex; align-items: center; gap: 0.375rem; }
+    .sf-plan-btn { padding: 0.35rem 0.9rem; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 600; border: 1.5px solid transparent; transition: all 0.15s; white-space: nowrap; }
+    .sf-plan-standard { color: #C084FC; border-color: rgba(192,132,252,0.3); }
+    .sf-btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.25rem; background: var(--sf-primary); color: #fff;
+      border-radius: var(--radius); font-size: 0.9rem; font-weight: 600;
+      border: none; cursor: pointer; transition: all 0.15s;
+    }
+    .sf-btn-primary:hover { background: var(--sf-primary-dark); transform: translateY(-1px); }
+    .sf-mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .sf-mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--sf-text); border-radius: 9999px; transition: all 0.2s; }
+    .sf-mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999; background: #0F172A; border-bottom: 1px solid var(--sf-border); padding: 1.25rem 1.5rem; }
+    .sf-mobile-menu.open { display: block; }
+    .sf-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0.125rem; }
+    .sf-mobile-menu a { display: block; padding: 0.625rem 0.75rem; color: var(--sf-text-muted); font-size: 0.9375rem; border-radius: 0.375rem; }
+    .sf-mobile-menu a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+    main { padding-top: 72px; }
+
+    .post-hero {
+      background: linear-gradient(135deg, #111827 0%, #161F2F 55%, #0B131E 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 4rem 1.5rem 2.8rem;
+      position: relative; overflow: hidden;
+    }
+    .post-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(148,163,184,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .post-hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+    .post-hero .post-tag { margin-bottom: 1rem; }
+    .post-hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+    .post-hero-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.875rem; color: rgba(255,255,255,0.45); }
+    .post-hero-cover { margin-top: 2rem; border-radius: 1rem; overflow: hidden; max-height: 400px; }
+    .post-hero-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+    .post-tag {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.2rem 0.65rem; border-radius: 9999px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .tag-threat    { background: rgba(239,68,68,0.15); color: #FCA5A5; border: 1px solid rgba(239,68,68,0.25); }
+    .tag-edr       { background: rgba(17,127,204,0.15); color: #93C5FD; border: 1px solid rgba(17,127,204,0.3); }
+    .tag-ransomware{ background: rgba(251,146,60,0.15); color: #FED7AA; border: 1px solid rgba(251,146,60,0.25); }
+    .tag-compliance{ background: rgba(52,211,153,0.15); color: #6EE7B7; border: 1px solid rgba(52,211,153,0.25); }
+    .tag-phishing  { background: rgba(251,191,36,0.15); color: #FDE68A; border: 1px solid rgba(251,191,36,0.25); }
+    .tag-howto     { background: rgba(167,139,250,0.15); color: #DDD6FE; border: 1px solid rgba(167,139,250,0.25); }
+    .tag-news      { background: rgba(120,189,228,0.15); color: #BAE6FD; border: 1px solid rgba(120,189,228,0.25); }
+
+    .post-body {
+      max-width: 940px; margin: 0 auto; padding: 3rem 1.75rem 5rem;
+      background: rgba(10,14,24,0.92); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.5rem; box-shadow: 0 35px 90px rgba(0,0,0,0.25);
+    }
+    .post-body .post-content {
+      font-size: 1.075rem; line-height: 1.85; color: rgba(248,250,252,0.92);
+    }
+    .post-content h2 {
+      font-size: 1.75rem; font-weight: 700; margin: 2.5rem 0 1rem;
+      letter-spacing: -0.03em; color: #F8FAFC;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid rgba(96, 165, 250, 0.8);
+      background: linear-gradient(135deg, rgba(30, 58, 95, 0.5) 0%, rgba(49, 46, 129, 0.3) 100%);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .post-content h3 {
+      font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.85rem;
+      color: #d4a853;
+      padding-left: 0.75rem;
+      border-left: 3px solid rgba(212, 168, 83, 0.6);
+    }
+    .post-content p { margin-bottom: 1.75rem; }
+    .post-content p.related-inline {
+      background: rgba(96, 165, 250, 0.08);
+      border: 1px solid rgba(96, 165, 250, 0.2);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+    }
+    .post-content p.related-inline a {
+      color: #93C5FD;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .post-content p.related-inline a:hover { color: #E0F2FE; text-decoration: underline; }
+    .post-content ul, .post-content ol {
+      margin: 1.75rem 0 1.75rem 1.35rem;
+      padding-left: 0.75rem;
+    }
+    .post-content ul { list-style: disc outside; }
+    .post-content ol { list-style: decimal outside; }
+    .post-content li { margin-bottom: 0.9rem; }
+    .post-content a { color: #8DD1FF; text-decoration: underline; }
+    .post-content a:hover { color: #E0F2FE; }
+    .post-content blockquote {
+      border-left: 4px solid rgba(96,165,250,0.7); padding: 1rem 1.25rem;
+      margin: 1.75rem 0; background: rgba(148,163,184,0.08);
+      border-radius: 0.85rem 0.35rem 0.35rem 0.85rem; color: rgba(248,250,252,0.82);
+    }
+    .post-content pre {
+      background: rgba(248,250,252,0.06); border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 0.95rem; padding: 1.25rem; overflow-x: auto;
+      font-size: 0.92rem; margin: 1.75rem 0;
+    }
+    .post-content code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      background: rgba(255,255,255,0.08); color: #E2E8F0;
+      padding: 0.18rem 0.35rem; border-radius: 0.35rem;
+    }
+    .post-content img { border-radius: 1rem; margin: 2rem 0; }
+    .post-content hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2.5rem 0; }
+
+    /* ── Tables ────────────────────────────────────────────────────────────── */
+    .post-content table {
+      width: 100%; border-collapse: collapse;
+      margin: 1.75rem 0; font-size: 0.95rem;
+      background: rgba(248,250,252,0.03);
+      border-radius: 0.75rem; overflow: hidden;
+    }
+    .post-content thead th {
+      background: rgba(148,163,184,0.12);
+      color: #E2E8F0; font-weight: 600;
+      text-align: left; padding: 0.75rem 1rem;
+      font-size: 0.85rem; text-transform: uppercase;
+      letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .post-content thead th:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .post-content tbody td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(248,250,252,0.85);
+    }
+    .post-content tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .post-content tbody td:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .post-content tbody tr:hover td {
+      background: rgba(148,163,184,0.06);
+    }
+    .post-content tfoot td {
+      padding: 0.85rem 1rem;
+      background: rgba(148,163,184,0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .post-content table p { margin: 0; }
+    .post-content table ul, .post-content table ol { margin: 0.35rem 0; }
+    @media (max-width: 640px) {
+      .post-content table { font-size: 0.85rem; }
+      .post-content thead th, .post-content tbody td { padding: 0.55rem 0.6rem; }
+    }
+
+    .post-nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .post-nav a { font-size: 0.95rem; color: #8DD1FF; display: flex; align-items: center; gap: 0.5rem; }
+    .post-nav a:hover { color: #E0F2FE; }
+
+    .loading-state { text-align: center; padding: 6rem 1rem; color: rgba(255,255,255,0.42); }
+
+    .sf-footer { background: #070E1A; border-top: 1px solid var(--sf-border); padding: 2.5rem 0; margin-top: 4rem; }
+    .sf-footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; color: rgba(255,255,255,0.3); }
+    .sf-footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .sf-footer-links a { color: rgba(255,255,255,0.3); }
+    .sf-footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      .sf-nav-links, .sf-plans-nav, .sf-btn-primary { display: none; }
+      .sf-mobile-toggle { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sf-nav">
+    <div class="sf-nav-inner">
+      <a href="index-2.html" class="sf-logo"><img src="shieldforceWhite.png" alt="ShieldForce Nigeria" loading="eager"></a>
+      <ul class="sf-nav-links">
+        <li><a href="index-2.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index-2.html#contact">Contact</a></li>
+        <li><a href="https://epinecng.com/">EPINEC</a></li>
+      </ul>
+      <div class="sf-plans-nav">
+        <a href="standard.html" class="sf-plan-btn sf-plan-standard">Standard Edition</a>
+      </div>
+      <a href="index-2.html#contact" class="sf-btn-primary">Get Protected</a>
+      <button class="sf-mobile-toggle" id="sfMobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="sf-mobile-menu" id="sfMobileMenu">
+    <ul>
+      <li><a href="index-2.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index-2.html#contact">Contact</a></li>
+      <li><a href="https://epinecng.com/">Back to EPINEC</a></li>
+      <li style="padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.08);margin-top:0.5rem;">
+        <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);font-weight:600;">Offer</span>
+      </li>
+      <li><a href="standard.html">Standard Edition &nbsp;·&nbsp; 1 user, 3-in-1 or 5-in-1</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <div id="postContainer">
+      <div class="loading-state"><i class="fa-solid fa-circle-notch fa-spin" style="font-size:2rem;margin-bottom:1rem;display:block;"></i>Loading article…</div>
+    </div>
+  </main>
+
+  <footer class="sf-footer">
+    <div class="sf-footer-inner">
+      <div>© 2026 EPINEC Nigeria Ltd · Sole Distributor of ShieldForce in Africa</div>
+      <div class="sf-footer-links">
+        <a href="index-2.html">ShieldForce Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="standard.html">Standard Edition</a>
+        <a href="https://epinecng.com/cdn-cgi/l/email-protection#066f68606946756e6f636a626069746563287375">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    document.getElementById('sfMobileToggle').addEventListener('click', function () {
+      document.getElementById('sfMobileMenu').classList.toggle('open');
+    });
+
+    var BASE_URL = 'https://epinecng.com/';
+    var LOGO_URL = BASE_URL + '/shieldforce/shieldforceWhite.png';
+
+    var CAT_STYLE = {
+      'Threat Intel': 'tag-threat',
+      'EDR':          'tag-edr',
+      'Ransomware':   'tag-ransomware',
+      'Compliance':   'tag-compliance',
+      'Phishing':     'tag-phishing',
+      'How-To':       'tag-howto',
+      'News':         'tag-news'
+    };
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function fmtDate(unix) {
+      if (!unix) return '';
+      return new Date(unix * 1000).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function toISO(unix) {
+      if (!unix) return new Date().toISOString();
+      return new Date(unix * 1000).toISOString();
+    }
+
+    // ── Inject SEO meta tags + JSON-LD once post is loaded ───────────────────
+    function injectSEO(post) {
+      var canonicalUrl = BASE_URL + '/shieldforce/blog/' + encodeURIComponent(post.slug);
+      var ogImage      = post.cover_image || LOGO_URL;
+      var datePublished = toISO(post.published_at);
+
+      // Title + description
+      document.title = escHtml(post.title) + ' | ShieldForce Blog';
+      document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || '');
+
+      // Canonical
+      var canonEl = document.getElementById('canonical-link');
+      if (canonEl) canonEl.setAttribute('href', canonicalUrl);
+
+      // Open Graph
+      function setMeta(id, val) { var el = document.getElementById(id); if (el) el.setAttribute('content', val); }
+      setMeta('og-title',       post.title);
+      setMeta('og-description', post.excerpt || '');
+      setMeta('og-image',       ogImage);
+      setMeta('og-url',         canonicalUrl);
+      setMeta('tw-title',       post.title);
+      setMeta('tw-description', post.excerpt || '');
+      setMeta('tw-image',       ogImage);
+
+      // article: meta tags
+      var head = document.head;
+      function addMeta(prop, val) {
+        var m = document.createElement('meta');
+        m.setAttribute('property', prop);
+        m.setAttribute('content', val);
+        head.appendChild(m);
+      }
+      addMeta('article:published_time', datePublished);
+      addMeta('article:modified_time',  datePublished);
+      addMeta('article:section',        post.category);
+      addMeta('article:author',         'ShieldForce Editorial Team');
+
+      // JSON-LD BlogPosting
+      var jsonLd = {
+        '@context':        'https://schema.org',
+        '@type':           'BlogPosting',
+        '@id':             canonicalUrl + '#blogposting',
+        mainEntityOfPage:  { '@type': 'WebPage', '@id': canonicalUrl },
+        headline:          post.title,
+        description:       post.excerpt || '',
+        image:             post.cover_image ? [post.cover_image] : [LOGO_URL],
+        datePublished:     datePublished,
+        dateModified:      datePublished,
+        author: {
+          '@type': 'Organization',
+          name:    'ShieldForce Editorial Team',
+          url:     BASE_URL + '/shieldforce/',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name:    'EPINEC Nigeria Ltd \u2014 ShieldForce',
+          url:     BASE_URL + '/shieldforce/',
+          logo:    { '@type': 'ImageObject', url: LOGO_URL },
+        },
+        articleSection:      post.category,
+        keywords:            [post.category, 'cybersecurity Nigeria', 'ShieldForce', 'endpoint security', 'ransomware protection'],
+        inLanguage:          'en-NG',
+        isAccessibleForFree: true,
+      };
+
+      // BreadcrumbList
+      var breadcrumbLd = {
+        '@context': 'https://schema.org',
+        '@type':    'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ShieldForce Nigeria', item: BASE_URL + '/shieldforce/' },
+          { '@type': 'ListItem', position: 2, name: 'Blog',                item: BASE_URL + '/shieldforce/blog.html' },
+          { '@type': 'ListItem', position: 3, name: post.title,            item: canonicalUrl },
+        ],
+      };
+
+      [jsonLd, breadcrumbLd].forEach(function(schema) {
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(schema);
+        head.appendChild(s);
+      });
+    }
+
+    async function loadPost() {
+      var params    = new URLSearchParams(window.location.search);
+      var slug      = params.get('slug');
+      var container = document.getElementById('postContainer');
+
+      if (!slug) {
+        container.innerHTML = '<div class="loading-state"><i class="fa-solid fa-newspaper" style="font-size:2rem;margin-bottom:1rem;display:block;opacity:0.3;"></i>No article specified.</div>';
+        return;
+      }
+
+      try {
+        var res = await fetch('/shieldforce/api/blog/posts/' + encodeURIComponent(slug));
+        if (!res.ok) throw new Error('Post not found');
+        var post = await res.json();
+
+        // Inject SEO meta + JSON-LD
+        injectSEO(post);
+
+        var tagClass = CAT_STYLE[post.category] || 'tag-news';
+        var coverHtml = post.cover_image
+          ? '<div class="post-hero-cover"><img src="' + escHtml(post.cover_image) + '" alt="' + escHtml(post.title) + '" loading="eager"></div>'
+          : '';
+
+        var dateISO = toISO(post.published_at);
+
+        var html = '<article>'
+          + '<div class="post-hero"><div class="post-hero-inner">'
+          + '<span class="post-tag ' + tagClass + '">' + escHtml(post.category) + '</span>'
+          + '<h1>' + escHtml(post.title) + '</h1>'
+          + '<div class="post-hero-meta">'
+          + '<span><i class="fa-solid fa-users" aria-hidden="true"></i> ShieldForce Editorial Team</span>'
+          + '<span aria-hidden="true">&middot;</span>'
+          + '<span><i class="fa-regular fa-calendar" aria-hidden="true"></i> <time datetime="' + dateISO + '">' + fmtDate(post.published_at) + '</time></span>'
+          + '<span aria-hidden="true">&middot;</span>'
+          + '<span><i class="fa-regular fa-clock" aria-hidden="true"></i> ' + escHtml(post.read_time) + ' min read</span>'
+          + '</div>'
+          + coverHtml
+          + '</div></div>'
+          + '<div class="post-body">'
+          + '<div class="post-content">' + post.body_html + '</div>'
+          + '<nav class="post-nav" aria-label="Article navigation">'
+          + '<a href="blog.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Blog</a>'
+          + '</nav></div></article>';
+
+        container.innerHTML = html;
+      } catch (err) {
+        container.innerHTML = '<div class="loading-state"><i class="fa-solid fa-triangle-exclamation" style="font-size:2rem;margin-bottom:1rem;display:block;color:#f87171;"></i>Could not load article. <a href="blog.html" style="color:#93C5FD;text-decoration:underline;">Back to blog</a></div>';
+      }
+    }
+
+    loadPost();
+  </script>
+</body>
+
+<!-- Mirrored from https://epinecng.com/shieldforce/blog-post.html?slug= by HTTrack Website Copier/3.x [XR&CO], Tue, 29 Sep 2026 11:22:19 GMT -->
+</html>
