@@ -1,0 +1,59 @@
+# Contributing to ShieldForce Nigeria Website
+
+Thank you for your interest in improving the ShieldForce Nigeria website!
+
+We welcome contributions that improve the website's usability, accessibility,
+reliability, performance, and maintainability.
+
+## Getting Started
+
+1. Browse the open issues to find a task.
+2. Read the issue description and acceptance criteria.
+3. If the task is unclear, ask questions in the issue before starting.
+4. For substantial changes, discuss the proposed approach before implementation.
+
+## Reporting Bugs
+
+When reporting a bug, please include:
+
+- A clear description of the problem.
+- Steps to reproduce it.
+- Expected behaviour.
+- Actual behaviour.
+- Browser and device information, where relevant.
+- Screenshots, if they help explain the problem.
+
+## Making Changes
+
+1. Fork the repository.
+2. Create a branch for your change.
+3. Keep changes focused on the issue you're addressing.
+4. Follow the existing HTML, CSS, and JavaScript conventions.
+5. Check your changes in a browser before submitting them.
+6. Avoid committing passwords, API keys, customer information, or other secrets.
+
+## Submitting a Pull Request
+
+Please include:
+
+- A description of the changes.
+- The issue the changes address, using `Closes #ISSUE_NUMBER` when appropriate.
+- Testing steps and their results.
+- Screenshots for visual changes, where useful.
+
+Keep pull requests focused and explain any limitations or outstanding work.
+
+## Security and External Services
+
+Do not probe external systems, submit test customer data, or modify third-party
+services without appropriate authorization.
+
+If you discover a possible security issue, report it privately to the
+maintainer rather than publishing sensitive details.
+
+## Review Process
+
+Contributions will be reviewed before they are merged. The maintainer may
+request changes to ensure that the proposed solution is correct and maintainable.
+
+Thank you for helping improve the project!
